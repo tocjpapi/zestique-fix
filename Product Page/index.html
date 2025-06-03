@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name = "apple-mobile-web-app-status-bar-style" content = "#d9d9d7">
+    <meta content='#d9d9d7' name='theme-color'/> 
+    <title>Zestique — Product page</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <div class="desktop">
+    <div class="back-button">
+        <a href="javascript:history.back()">←</a>
+    </div>  
+
+    <div class="nav jizz">
+    
+        <div class="nav-item">
+            <a href="/Cart/">Cart (<span id="in-cart">0</span>)</a>
+        </div>
+    </div>
+
+    <div class="back-button-spacer"></div>
+
+    <div class="product-pics">
+        <div class="product-pic">
+            <img draggable="false" src="../assets/images/clothes/test-pants.png" alt="" srcset="">
+        </div>
+        <div class="product-pic">
+            <img draggable="false" src="../assets/images/clothes/test-default-model.png" alt="" srcset="">
+        </div>
+        <div class="product-pic">
+            <img draggable="false" src="../assets/images/clothes/test-default-model-side.png" alt="">
+        </div>
+
+    </div>
+
+    <div class="fixed-right">
+     <div class="flexed-about">
+
+        <div class="product-name">
+            <p><span id="name-of-selected-product">Technical Joggers</span>;</p>
+        </div>
+
+        <div class="product-desc">
+            <p><span id="description-of-product">Some boring sample text tha'll change depending on the product that's on display. In this case it's on some pair of 'Technical Joggers'.</span></p>
+        </div>
+
+        <div class="color-flexed flexed">
+            <div class="color-word word">
+                <p>Color;</p>
+            </div>
+
+            <div class="colors">
+            <div class="boss color-box-boss">
+                <div class="wrapper color-box-wrapper">
+                    <div class="color-box active">
+                        <div class="color-box-inner" style="background: #000;"></div>
+                    </div>
+                    <div class="color-name">Black</div>
+                </div>
+
+                <div class="wrapper color-box-wrapper">
+                    <div class="color-box" >
+                        <div class="color-box-inner" style="background: #cbcbcb;"></div>
+                    </div>
+                    <div class="color-name">Gray</div>
+                </div>
+
+                <div class="wrapper color-box-wrapper">
+                    <div class="color-box" >
+                        <div class="color-box-inner" style="background: #f5f5f5;"></div>
+                    </div>
+                    <div class="color-name">White</div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="sizes-flexed flexed">
+            <div class="sizes-word word">
+                <p>Size;</p>
+            </div>
+
+            <div class="sizes">
+                <div class="boss sizes-box-boss">
+                    <div class="wrapper sizes-box-wrapper">
+
+                        <div class="sizes-box active">
+                            <p>S</p>
+                        </div>
+                    </div>
+    
+                    <div class="wrapper sizes-box-wrapper">
+                        <div class="sizes-box" >
+                            <p>M</p>
+                        </div>
+                    </div>
+
+                    <div class="wrapper sizes-box-wrapper">
+                        <div class="sizes-box">
+                            <p>L</p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+
+
+        <div class="quantity-flexed flexed">
+            <div class="quantity-word word">
+                <p>Quantity;</p>
+            </div>
+
+            <div class="adjust-quantity">
+                <div class="arrow quantity-box disabled" id="decrease">
+                   <p>-</p>
+                </div>
+                <input type="number" class="number quantity-box" id="quantity" value="1" min="1">
+                
+                <div class="arrow quantity-box" id="increase">
+                    <p>+</p>
+                </div>
+              </div>
+
+
+        </div>
+
+
+        <div class="cart-flexed flexed">
+            <div class="cart-word">
+                <p>Add to Cart</p>
+            </div>
+        </div>
+
+
+    
+
+    </div>
+        <div class="absolute-no">
+            <p id="index-of-selected-product">1</p>
+        </div>
+
+
+        <div class="price-word" id="price-word">
+            <p>NGN 40,000</p>
+        </div>
+    </div>
+
+    <div class="spacer-mini"></div>
+</div>
+
+<div class="mobile">
+
+    <div class="back-button">
+        <a href="javascript:history.back()">←</a>
+    </div>  
+
+    <div class="nav-mobile">
+        <div class="nav-item">
+            <a href="/Cart/">Cart (<span id="in-cart">0</span>)</a>
+        </div>
+    </div>
+
+    <div class="back-button-spacer"></div>
+
+    <div class="main-frame-mobile">
+        <div class="image-scroller">
+            <img draggable="false" src="../assets/images/clothes/test-pants.png" alt="">
+            <img draggable="false" src="../assets/images/clothes/test-default-model.png" alt="">
+            <img draggable="false" src="../assets/images/clothes/test-default-model-side.png" alt="">
+          </div>
+    <div class="image-number-mobile">
+            <p><sup id="current-image">1</sup>&frasl;<sub id="total-images"></sub></p>
+        </div>
+    </div>
+
+    <div class="title-stuff-mobile">
+       <div class="clothes-title-mobile">
+        <p>Technical Joggers</p>
+       </div> 
+       <div class="price-mobile">
+        <p>NGN 40,000</p>
+       </div>
+
+       <div class="add-to-cart-mobile">
+        <p>Add to Cart</p>
+       </div>
+    </div>
+
+    <div class="sort-stuff-mobile">
+
+
+<div class="this-mobile">
+    <div class="this-text-mobile">
+        <p>Color;</p>
+    </div>
+    <div class="this-control-mobile dropdown-wrapper">
+        <select class="dropdown-select">
+
+        </select>
+        <span class="dropdown-display">Black</span>
+    </div>
+</div>
+
+<div class="this-mobile">
+    <div class="this-text-mobile">
+        <p>Size;</p>
+    </div>
+    <div class="this-control-mobile dropdown-wrapper">
+        <select class="dropdown-select">
+
+        </select>
+        <span class="dropdown-display">S</span>
+    </div>
+</div>
+
+        <div class="this-mobile">
+            <div class="this-text-mobile">
+                <p>Quantity;</p>
+            </div>
+            <div class="this-control-mobile">
+                <input type="number" class="styled-input" value="1" min="1">
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-spacer3"></div>
+
+</div>
+    
+    <div class="tint"></div>
+
+
+    <script src="../assets/js/lenis.js"></script>
+    <script src="../assets/js/gsap.js"></script>
+    <script src="../assets/js/ScrollTrigger.js"></script>
+    <script src="../assets/js/d.js"></script>
+
+
+
+
+<script>
+
+    document.querySelectorAll('.color-box').forEach(box => {
+      box.addEventListener('click', () => {
+        document.querySelectorAll('.color-box').forEach(b => b.classList.remove('active'));
+        box.classList.add('active');
+      });
+    });
+  
+    document.querySelectorAll('.sizes-box').forEach(box => {
+      box.addEventListener('click', () => {
+        document.querySelectorAll('.sizes-box').forEach(b => b.classList.remove('active'));
+        box.classList.add('active');
+      });
+    });
+  </script>
+
+    
+  
+  
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const colorSelect = document.querySelectorAll('.dropdown-select')[0];
+            const sizeSelect = document.querySelectorAll('.dropdown-select')[1];
+            const colorDisplay = colorSelect.nextElementSibling;
+            const sizeDisplay = sizeSelect.nextElementSibling;
+        
+            const colorBoxes = document.querySelectorAll('.color-box-wrapper');
+            const sizeBoxes = document.querySelectorAll('.sizes-box-wrapper');
+        
+            // Helper to create <option> elements
+            function createOptionsFromElements(select, display, elements, getValue) {
+                select.innerHTML = ''; // Clear any existing
+                elements.forEach((el, i) => {
+                    const value = getValue(el);
+                    const option = document.createElement('option');
+                    option.value = value;
+                    option.textContent = value;
+                    select.appendChild(option);
+                });
+                display.textContent = select.value;
+            }
+        
+            // Populate color and size dropdowns
+            createOptionsFromElements(colorSelect, colorDisplay, colorBoxes, el => el.querySelector('.color-name').textContent.trim());
+            createOptionsFromElements(sizeSelect, sizeDisplay, sizeBoxes, el => el.querySelector('.sizes-box').textContent.trim());
+        
+            // Handle dropdown changes
+            [colorSelect, sizeSelect].forEach((select, index) => {
+                select.addEventListener('change', function () {
+                    const value = this.value;
+                    const display = this.nextElementSibling;
+                    display.textContent = value;
+        
+                    if (index === 0) {
+                        colorBoxes.forEach(box => {
+                            const color = box.querySelector('.color-name').textContent.trim();
+                            box.querySelector('.color-box').classList.toggle('active', color === value);
+                        });
+                    } else {
+                        sizeBoxes.forEach(box => {
+                            const size = box.querySelector('.sizes-box').textContent.trim();
+                            box.querySelector('.sizes-box').classList.toggle('active', size === value);
+                        });
+                    }
+                });
+            });
+        
+            // Desktop to mobile sync for color/size boxes
+            colorBoxes.forEach(box => {
+                const color = box.querySelector('.color-name').textContent.trim();
+                box.querySelector('.color-box').addEventListener('click', () => {
+                    colorSelect.value = color;
+                    colorDisplay.textContent = color;
+                    colorBoxes.forEach(b => b.querySelector('.color-box').classList.remove('active'));
+                    box.querySelector('.color-box').classList.add('active');
+                });
+            });
+        
+            sizeBoxes.forEach(box => {
+                const size = box.querySelector('.sizes-box').textContent.trim();
+                box.querySelector('.sizes-box').addEventListener('click', () => {
+                    sizeSelect.value = size;
+                    sizeDisplay.textContent = size;
+                    sizeBoxes.forEach(b => b.querySelector('.sizes-box').classList.remove('active'));
+                    box.querySelector('.sizes-box').classList.add('active');
+                });
+            });
+        
+            // Quantity Logic (merged)
+            const desktopQuantity = document.getElementById('quantity');
+            const mobileQuantity = document.querySelector('.styled-input');
+            const decreaseBtn = document.getElementById('decrease');
+            const increaseBtn = document.getElementById('increase');
+        
+            function updateButtons() {
+                const value = parseInt(desktopQuantity.value);
+                decreaseBtn.classList.toggle('disabled', value <= 1);
+            }
+        
+            function setQuantity(value) {
+                value = isNaN(value) || value < 1 ? 1 : value;
+                desktopQuantity.value = value;
+                mobileQuantity.value = value;
+                updateButtons();
+            }
+        
+            increaseBtn.addEventListener('click', () => {
+                setQuantity(parseInt(desktopQuantity.value) + 1);
+            });
+        
+            decreaseBtn.addEventListener('click', () => {
+                setQuantity(parseInt(desktopQuantity.value) - 1);
+            });
+        
+            desktopQuantity.addEventListener('input', () => {
+                setQuantity(parseInt(desktopQuantity.value));
+            });
+        
+            mobileQuantity.addEventListener('input', () => {
+                setQuantity(parseInt(mobileQuantity.value));
+            });
+        
+            desktopQuantity.addEventListener('wheel', (e) => e.preventDefault());
+            mobileQuantity.addEventListener('wheel', (e) => e.preventDefault());
+        
+            // Initial sync
+            setQuantity(parseInt(desktopQuantity.value) || 1);
+        });
+        </script>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+              const scroller = document.querySelector('.image-scroller');
+              const images = scroller.querySelectorAll('img');
+              const currentImageEl = document.getElementById('current-image');
+              const totalImageEl = document.getElementById('total-images');
+          
+              totalImageEl.textContent = images.length;
+          
+              function updateCurrentImage() {
+                const scrollLeft = scroller.scrollLeft;
+                const width = scroller.clientWidth;
+                const index = Math.round(scrollLeft / width);
+                currentImageEl.textContent = index + 1;
+              }
+          
+              scroller.addEventListener('scroll', () => {
+                window.requestAnimationFrame(updateCurrentImage);
+              });
+            });
+          </script>
+          
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name = "apple-mobile-web-app-status-bar-style" content = "#d9d9d7">
+    <meta content='#d9d9d7' name='theme-color'/> 
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" href="../assets/images/Favicon/favicon-dark.png" type="image/x-icon">
+    <title>Zestique — Cart</title>
+</head>
+<body>
+    <div class="desktop">
+    <div class="catalogue-header">
+        <div class="nav">
+            <div class="nav-item">
+                <a href="/">Home,</a>
+            </div>
+        
+            <div class="nav-item">
+                <a href="/Catalogue/">Shop</a>
+            </div>
+        </div>
+        <div class="catalogue-statement">
+            <p><span>c</span>art;</p>
+        </div>
+    </div>
+
+
+    <div class="sorting-stuff">
+        <div class="no-of-items">
+            <p>Items (<span id="in-cart">0</span>)</p>
+        </div>
+
+        <div class="total">
+            <p>Total — <span id="Currency">NGN</span> <span id="total"></span></p>
+        </div>
+    </div>
+
+
+    <div class="cart-items" id="desktop-cart-items">
+
+
+    </div>
+
+    <div class="proceed-to-checkout-box">
+        <p>Proceed to Checkout</p>
+    </div>
+
+    <div class="spacer"></div>
+
+</div>
+
+<div class="mobile">
+    <div class="catalogue-header">
+        <div class="nav-mobile">
+            <div class="shop">
+                <a href="/">Home,</a>
+            </div>
+        
+            <div class="cart">
+                <a href="/Catalogue/">Shop</a>
+            </div>
+        </div>
+
+
+
+        <div class="catalogue-statement">
+            <p><span>c</span>art;</p>
+        </div>
+</div>
+
+
+<div class="sorting-stuff">
+    <div class="no-of-items">
+        <p>Items (<span id="in-cart-mobile">0</span>)</p>
+    </div>
+
+    <div class="total t-m">
+        <p>Total — <span id="Currency">NGN</span> <span id="total-mobile"></span></p>
+    </div>
+</div>
+
+<div class="cart-items c-m" id="mobile-cart-items">
+
+
+</div>
+
+<div class="proceed-to-checkout-box">
+    <p>Proceed to Checkout</p>
+</div>
+
+<div class="spacer"></div>
+
+
+</div>
+
+    <div class="tint"></div>
+
+
+    <script src="../assets/js/lenis.js"></script>
+    <script src="../assets/js/gsap.js"></script>
+    <script src="../assets/js/ScrollTrigger.js"></script>
+    <script src="../assets/js/d.js"></script>
+
+
+
+
+    <script>
+        function setCart(data) {
+            localStorage.setItem('cart', JSON.stringify(data));
+        }
+    
+        function getCart() {
+            const data = localStorage.getItem('cart');
+            return data ? JSON.parse(data) : [];
+        }
+    
+        document.addEventListener('DOMContentLoaded', () => {
+            let cart = getCart();
+    
+            function renderCartItems() {
+                const desktopContainer = document.getElementById('desktop-cart-items');
+                const mobileContainer = document.getElementById('mobile-cart-items');
+    
+                desktopContainer.innerHTML = '';
+                mobileContainer.innerHTML = '';
+    
+                let itemCount = 0;
+                let totalAmount = 0;
+    
+                cart.forEach((item, index) => {
+                    itemCount += item.quantity;
+                    totalAmount += parseInt(item.price) * item.quantity;
+    
+                    const itemHTML = `
+                        <div class="cart-item" data-index="${index}">
+                            <div class="about-the-cart">
+                                <div class="cart-item-img">
+                                    <img src="${item.image}" alt="${item.name}">
+                                </div>
+                                <div class="cart-item-text">
+                                    <div class="cart-item-name">
+                                        <p><span class="name-of-cart-item">${item.name}</span> (<span class="size-of-cart-item">${item.size}</span>, <span class="colour-of-cart-item">${item.color}</span>)</p>
+                                    </div>
+                                    <div class="cart-item-quantity">
+                                        <p>Quantity: <span class="quantity-of-item">${item.quantity}</span></p>
+                                    </div>
+                                    <button class="delete-item-btn">Remove</button>
+                                </div>
+                            </div>
+                            <div class="cart-item-price">
+                                <p>NGN ${new Intl.NumberFormat().format(item.price)}</p>
+                            </div>
+                        </div>
+                    `;
+    
+                    desktopContainer.innerHTML += itemHTML;
+                    mobileContainer.innerHTML += itemHTML;
+                });
+    
+                document.getElementById('in-cart').textContent = itemCount;
+                document.getElementById('in-cart-mobile').textContent = itemCount;
+    
+                const formattedTotal = new Intl.NumberFormat().format(totalAmount);
+                document.getElementById('total').textContent = formattedTotal;
+                document.getElementById('total-mobile').textContent = formattedTotal;
+    
+                document.querySelectorAll('.delete-item-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const parent = e.target.closest('.cart-item');
+                        const index = parseInt(parent.dataset.index);
+                        cart.splice(index, 1);
+                        setCart(cart);
+                        renderCartItems();
+                    });
+                });
+            }
+    
+
+            
+            renderCartItems();
+    
+            document.querySelectorAll('.proceed-to-checkout-box').forEach(box => {
+                box.addEventListener('click', () => {
+                    if (cart.length === 0) {
+                        alert('Your cart is empty!');
+                    } else {
+                        alert('Proceeding to checkout!');
+                        // window.location.href = 'checkout.html'; // optional redirect
+                    }
+                });
+            });
+        });
+    </script>
+    
+    
+    
+</body>
+</html>

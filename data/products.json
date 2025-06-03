@@ -1,0 +1,77 @@
+[
+  {
+    "id": "item-001",
+    "name": "Novachrone Tee",
+    "category": "tops",
+    "date": "2024-04-01",
+    "prices": {
+      "Nigeria": "NGN 25,000",
+      "Britain": "GBP 44",
+      "Americas": "USD 49",
+      "Canada": "CAD 63"
+    },
+    "img": "../assets/images/clothes/Novachrone Tee/1.png",
+    "url": "/Novachrone Tee/",
+    "inStock": true
+  },
+  {
+    "id": "item-002",
+    "name": "Surge Double Sleeve",
+    "category": "tops",
+    "date": "2024-03-01",
+    "prices": {
+      "Nigeria": "NGN 25,000",
+      "Britain": "GBP 44",
+      "Americas": "USD 49",
+      "Canada": "CAD 63"
+    },
+    "img": "../assets/images/clothes/surge double sleeves/1.png",
+    "url": "/Surge Double Sleeves/",
+    "inStock": true
+  },
+  {
+    "id": "item-003",
+    "name": "Renegade Jeans",
+    "category": "bottoms",
+    "date": "2024-02-15",
+    "prices": {
+      "Nigeria": "NGN 27,000",
+      "Britain": "GBP 47",
+      "Americas": "USD 52",
+      "Canada": "CAD 68"
+    },
+    "img": "../assets/images/clothes/Renegade jeans/1.png",
+    "url": "/Renegade Jeans/",
+    "inStock": true
+  },
+  {
+    "id": "item-004",
+    "name": "Core Tank Top",
+    "category": "tops",
+    "date": "2024-01-10",
+    "prices": {
+      "Nigeria": "NGN 15,000",
+      "Britain": "GBP 26",
+      "Americas": "USD 29",
+      "Canada": "CAD 37"
+    },
+    "img": "../assets/images/clothes/core tank top/1.png",
+    "url": null,
+    "inStock": false
+  },
+  {
+    "id": "item-005",
+    "name": "Flutter Tank Top",
+    "category": "tops",
+    "date": "2023-12-01",
+    "prices": {
+      "Nigeria": "NGN 13,000",
+      "Britain": "GBP 22",
+      "Americas": "USD 28",
+      "Canada": "CAD 34"
+    },
+    "img": "../assets/images/clothes/flutter tank top/1.png",
+    "url": null,
+    "inStock": false
+  }
+]
