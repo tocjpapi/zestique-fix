@@ -338,6 +338,7 @@ body {
   font-size: 1.9rem;
   text-transform: uppercase;
   overflow: hidden;
+  z-index: 9;
 }
 
 .last-things-mobile{

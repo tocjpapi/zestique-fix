@@ -820,12 +820,12 @@ let featuredProducts = [];
 
 // DOM elements
 const changeElements = document.querySelectorAll('.change-it');
-const select = document.getElementById('hiddenCountrySelect');
+const hiddenSelects = document.querySelectorAll('.hidden-country-select'); // Use class or custom attribute
 const mainClothes = document.getElementById('main-clothes');
 const mobileClothes = document.getElementById('mobile-clothes');
 
 // Populate only the hidden country select
-if (select) {
+hiddenSelects.forEach(select => {
   allowedCountries.forEach(country => {
     const option = document.createElement('option');
     option.value = country;
@@ -834,7 +834,8 @@ if (select) {
   });
   select.style.opacity = '0';
   select.style.pointerEvents = 'auto';
-}
+});
+
 
 // Show initial loading text
 changeElements.forEach(el => el.textContent = "Loading...");
@@ -871,7 +872,10 @@ function updateCountry(newCountry) {
   window.userCountry = selectedCountry;
 
   changeElements.forEach(el => el.textContent = selectedCountry);
-  if (select) select.value = selectedCountry;
+hiddenSelects.forEach(select => {
+  select.value = selectedCountry;
+});
+
   localStorage.setItem('selectedCountry', selectedCountry);
 
   renderProducts();
@@ -911,11 +915,12 @@ if (savedCountry && allowedCountries.includes(savedCountry)) {
 }
 
 // Listen for manual country changes (ONLY for hiddenCountrySelect)
-if (select) {
+hiddenSelects.forEach(select => {
   select.addEventListener('change', () => {
     updateCountry(select.value);
   });
-}
+});
+
 
 
 // catalogue specific
@@ -960,6 +965,8 @@ function updateLabel(selectElement) {
 
 function addCatalogueListeners(prefix) {
   const container = document.getElementById(prefix === '' ? 'main-cat' : 'cat-mobile');
+  if (!container) return; // 👈 prevent error
+
   const searchInput = document.getElementById(`searchInput${prefix}`);
   const categorySelect = document.getElementById(`categories${prefix}`);
   const sortSelect = document.getElementById(`sorting${prefix}`);
